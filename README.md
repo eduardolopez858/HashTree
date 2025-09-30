@@ -20,3 +20,7 @@
 
 ![](Rotation4.png)
 
+## Complexity Analysis: 
+#### Claim: The HashTree data structure has on average $O(1)$ and worst case $O(\log n)$ lookups on elements. 
+#### $proof:$ 
+
