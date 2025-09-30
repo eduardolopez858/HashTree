@@ -14,4 +14,4 @@
 ## Design:
 #### The data structure hashes element objects into an array of buckets. In the event of a collision (when the mapped element contains the same index of an already existing element represented as the bucket head pointer), each bucket maintains the strict balancing properties of an AVL tree. 
 
-![]()
+![](Design.png)
