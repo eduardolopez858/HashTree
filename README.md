@@ -18,5 +18,5 @@
 
 #### The find, insert, and remove operations begin with hashing, yielding $O(1)$ average-case access to the appropriate bucket. When collisions occur, the structure leverages the AVL tree within that bucket, ensuring a strict $O(\log n)$ worst-case bound for subsequent operations. This guarantee arises from the unique balancing mechanism of AVL trees: each node maintains a balance factor, and whenever the factor exceeds $1$ or $-1$, a rotation is performed to restore balance. As a result, the tree’s height is constrained to $O(\log n)$, in contrast to the potential $O(n)$ height of an unbalanced binary search tree.
 
-![]()
+![](Rotation.png)
 
