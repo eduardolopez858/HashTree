@@ -15,3 +15,8 @@
 #### The data structure hashes element objects into an array of buckets. In the event of a collision (when the mapped element contains the same index of an already existing element represented as the bucket head pointer), each bucket maintains the strict balancing properties of an AVL tree. 
 
 ![](Design.png)
+
+#### The find, insert, and remove operations begin with hashing, yielding $O(1)$ average-case access to the appropriate bucket. When collisions occur, the structure leverages the AVL tree within that bucket, ensuring a strict $O(\log n)$ worst-case bound for subsequent operations. This guarantee arises from the unique balancing mechanism of AVL trees: each node maintains a balance factor, and whenever the factor exceeds $1$ or $-1$, a rotation is performed to restore balance. As a result, the tree’s height is constrained to $O(\log n)$, in contrast to the potential $O(n)$ height of an unbalanced binary search tree.
+
+![]()
+
