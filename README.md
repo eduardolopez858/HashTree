@@ -10,3 +10,8 @@
 
 ## Related Work: 
 #### Java’s HashMap standard library implements collision resolution using linked lists, which were later optimized by replacing them with Red-Black Trees to improve worst-case performance. While Red-Black Trees offer balanced insertion and lookup, they are not strictly height-balanced. In contrast, our design integrates an AVL tree as the collision resolution structure. Since AVL trees maintain stricter balancing than Red-Black Trees, this ensures a tighter bound on tree height and guarantees $O(\log n)$ performance in the worst case for find, insert, and remove operations, while preserving $O(1)$ average-case performance from hashing.
+
+## Design:
+#### The data structure hashes element objects into an array of buckets. In the event of a collision (when the mapped element contains the same index of an already existing element represented as the bucket head pointer), each bucket maintains the strict balancing properties of an AVL tree. 
+
+![]()
