@@ -21,13 +21,14 @@
 ![](Rotation4.png)
 
 ## Complexity Analysis: 
-#### Claim: 
-#### The HashTree data structure has on average $O(1)$ and worst case $O(\log n)$ lookups on elements.
-
-#### Assumptions:
-#### Uniform hashing: each element is equally likely to be mapped into any bucket.
-#### LoadFactor: the array of buckets is resized to keep a load factor $\alpha$ bounded by 0.75. That is, calculated by $n$/$m$ where $n$ is the number of elements and $m$ is the number of buckets.
-#### Rotations: have a complexity of $O(1)$, yielding $O(\log n)$ on find, insert, and remove operations
+#### Claim 1: 
+#### Under uniform hashing bounded by a constant load factor $\alpha$, the HashTree data structure has an expected $O(1)$ time complexity on find, insert, and remove operations.
 
 #### $proof:$ 
+#### We are assuming the case of no collisons, where each bucket only contains the head node, giving us an expected bucket size $O(1)$. 
+
+#### We know calculating the hash and index of the bucket $O(1)$.
+#### Since the expected size of the bucket is $O(1)$, then the work is $O(1)$. Each bucket has a strict $O(\log n)$ height because of the balanced tree structure, thus we get $O(\log (bucket size))$ = $O(\log O(1))$ = $O(1)$ expected work per operation.
+
+
 
