@@ -37,8 +37,8 @@ This now tells us that the find, insert, and remove operations must be bounded o
 
 #### Remark: These complexities are guaranteed on regular use operations. If the load factor exceeds $0.75$, resizing of the buckets array will cost a $O(n)$ pause for migrating the elements of the current array into the new resized array since we still get $O(\log n)$ on the find, insert, and remove operations. The space complexity of the HashTree data stucture is $O(n)$ where $n$ is the number of elements. More memory pointers are used than the standard hash map with seperate chaining (linked list) collision resolulion strategy.
 
-## Benchmark Testing:
-#### On bench mark testing (using a helper file created by AI), I compared the performance results of my HashTree data structure with the standard baseline unordered_map in c++. I tested and compared the find, insert, and remove operations on a number of iterations ($100000$) and did average case and worst case performance testing. These were the following results: 
+## Benchmark:
+#### When benchmark testing (using a helper file created by AI), I compared the performance results of my HashTree data structure with the standard baseline unordered_map in c++. I tested and compared the find, insert, and remove operations on a number of iterations ($100000$) and did average case and worst case performance testing. These were the following results: 
 
 ```
 === Benchmark: Normal Case (unique keys) ===
