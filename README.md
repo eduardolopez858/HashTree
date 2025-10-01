@@ -65,4 +65,8 @@ This should be false: 0
 // testing size method
 This should be size 1: 1
 ```
+## Resources:
+#### Paper on AVL Trees: https://arxiv.org/pdf/2406.05162
+#### Paper on HashMaps: https://arxiv.org/pdf/2501.02305
+#### 
 
