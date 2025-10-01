@@ -66,7 +66,10 @@ This should be false: 0
 This should be size 1: 1
 ```
 ## Resources:
-#### Paper on AVL Trees: https://arxiv.org/pdf/2406.05162
-#### Paper on HashMaps: https://arxiv.org/pdf/2501.02305
-#### 
+#### Paper on AVL Trees: https://github.com/eduardolopez858/HashTree/blob/main/PaperAVL.pdf
+#### Paper on HashMaps: https://github.com/eduardolopez858/HashTree/blob/main/PaperHash.pdf
+#### Script for HashTree class: https://github.com/eduardolopez858/HashTree/blob/main/HashTree.h
+#### Script for HashTree methods implementation: https://github.com/eduardolopez858/HashTree/blob/main/HashTree.cpp
+#### Script for main method (simple meteorite implementation): https://github.com/eduardolopez858/HashTree/blob/main/main.cpp
+#### Script for benchmarking: https://github.com/eduardolopez858/HashTree/blob/main/benchmark.cpp
 
