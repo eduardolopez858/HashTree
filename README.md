@@ -35,7 +35,7 @@ $proof:$ In the worst case of of maximum collisions, the bucket contains the str
 
 This now tells us that the find, insert, and remove operations must be bounded on worst time (maximum collision case) of the balanced tree height of $O(\log n)$. By adding the average case bound of $O(1)$ from claim 1, we would still get $O(\log n) + O(1)$ = $O(\log n)$ worst case time complexity for these operations.
 
-
+#### Remark: These complexities are guaranteed on regular use operations. If the load factor exceeds 0.75, resizing of the buckets array will cost a $O(n)$ pause for migration of the elements of the current array to a new double sized array since we still get $O(\log n)$ on the find, insert, and remove operations. The space complexity of the HashTree data stucture is $O(n)$ where $n$ is the number of elements.
 
 
 
