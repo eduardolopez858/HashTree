@@ -41,13 +41,13 @@ This now tells us that the find, insert, and remove operations must be bounded o
 #### When benchmark testing (using a helper file created by AI), I compared the performance results of my HashTree data structure with the standard baseline unordered_map in c++. I tested and compared the find, insert, and remove operations on $100000$ iterations and did average case and worst case performance testing. These were the following results: 
 
 ```
-=== Benchmark: Normal Case (unique keys) ===
-unordered_map -> insert: 44 ms, search: 4 ms, delete: 17 ms
-HashTree -> insert: 22 ms, search: 1 ms, delete: 4 ms
+=== Benchmark: Average Case (unique keys) ===
+unordered_map -> find: 4 ms, insert: 44 ms, remove: 17 ms
+HashTree -> find: 1 ms, insert: 21 ms, remove: 4 ms
 
 === Benchmark: Worst Case (all collide) ===
-unordered_map -> insert: 14 ms, search: 4 ms, delete: 3 ms
-HashTree -> insert: 9 ms, search: 1 ms, delete: 1 ms
+unordered_map -> find: 4 ms, insert: 14 ms, remove: 3 ms
+HashTree -> find: 1 ms, insert: 9 ms, remove: 1 ms
 ```
 
 
