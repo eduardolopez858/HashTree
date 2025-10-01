@@ -21,14 +21,17 @@
 ![](Rotation4.png)
 
 ## Complexity Analysis: 
-#### Claim 1: 
+#### Claim 1 (Average Case) : 
 #### Under uniform hashing bounded by a constant load factor $\alpha$, the HashTree data structure has an expected $O(1)$ time complexity on find, insert, and remove operations.
 
 #### $proof:$ 
-#### We are assuming the case of no collisons, where each bucket only contains the head node, giving us an expected bucket size $O(1)$. 
+#### Let $\alpha$ be the load factor calculated by $n$/$m$ where $n$ is the number of elements and $m$ is the number of buckets. This is bounded by a given constant $\alpha$ < 0.75 = $O(1)$ necessary for resizing.
+#### 1. By uniform hashing, the expected number of elements in any bucket is $E[k]$ = $\alpha$ = $O(1), where k is the number of elements in the bucket.
+#### 2. Each operation first calculates the hash and index of the bucket in $O(1)$.
+#### 3. Within each bucket, it contains a balanced tree structure of $O(\log k)$ cost for collision handling. Since $E[k]$ = $O(1)$ given from 1, then we get $O(\log E[k])$ = $O(\log O(1))$ = $O(1)$. 
+#### We can now combine 2 and 3 to get an overall expected $O(1)$ time complexity for the find, insert, and remove operations.
 
-#### We know calculating the hash and index of the bucket $O(1)$.
-#### Since the expected size of the bucket is $O(1)$, then the work is $O(1)$. Each bucket has a strict $O(\log n)$ height because of the balanced tree structure, thus we get $O(\log (bucket size))$ = $O(\log O(1))$ = $O(1)$ expected work per operation.
+
 
 
 
