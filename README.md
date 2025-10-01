@@ -50,4 +50,19 @@ unordered_map -> find: 4 ms, insert: 14 ms, remove: 3 ms
 HashTree -> find: 1 ms, insert: 9 ms, remove: 1 ms
 ```
 
+## Implementation:
+#### The HashTree data structure was implemented to efficiently handle mappings between meteorite masses and their corresponding names or locations. Each entry uses the meteorite’s mass (in kilograms) as the key, with the meteorite’s name as the associated value. This design allows for fast lookups, insertions, and deletions while maintaining predictable performance even in the presence of collisions. It enables fast queries on mass-based keys, allowing astronomers to quickly identify and compare meteorites of interest near constant times even in large datasets.
+
+```
+// testing find method
+This should be Aarhus: Aarhus
+This should be San Diego: San Diego
+This should be Acapulco: Acapulco
+// testing remove method
+This should be true: 1
+This should be true: 1
+This should be false: 0
+// testing size method
+This should be size 1: 1
+```
 
