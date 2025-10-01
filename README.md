@@ -21,7 +21,7 @@
 ![](Rotation4.png)
 
 ## Complexity Analysis: 
-#### Claim 1 (Average Case) : Under uniform hashing bounded by a constant load factor $\alpha$, the HashTree data structure has an expected $O(1)$ time complexity on find, insert, and remove operations.
+#### Lemma 1 (Average Case) : Under uniform hashing bounded by a constant load factor $\alpha$, the HashTree data structure has an expected $O(1)$ time complexity on find, insert, and remove operations.
 
 $proof:$ Let $\alpha$ be the load factor calculated by $n/m$ where $n$ is the number of elements and $m$ is the number of buckets. This is bounded by a given constant $\alpha$ < $0.75$ = $O(1)$ necessary for resizing.
 1. By uniform hashing, the expected number of elements in any bucket is $E[k]$ = $\alpha$ = $O(1)$, where $k$ is the number of elements in the bucket.
@@ -29,13 +29,25 @@ $proof:$ Let $\alpha$ be the load factor calculated by $n/m$ where $n$ is the nu
 3. Within each bucket, it contains a balanced tree structure of $O(\log k)$ cost for collision handling. Since $E[k]$ = $O(1)$ given from 1, then we get $O(\log E[k])$ = $O(\log O(1))$ = $O(1)$. 
 We can now combine 2 and 3 to get an overall expected $O(1)$ time complexity for the find, insert, and remove operations.
 
-#### Claim 2 (Worst Case) : The HashTree data structure guarantees a worst case time complexity of $O(\log n)$ for the find, insert, and remove operations.
+#### Lemma 2 (Worst Case) : The HashTree data structure guarantees a worst case time complexity of $O(\log n)$ for the find, insert, and remove operations.
 
 $proof:$ In the worst case of maximum collisions, the bucket contains the structure of a balanced tree of height $h$. Suppose $N(h)$ is the minimum number of nodes, then we get the recurrence $N(h)$ = 1 + $N(h - 1)$ + $N(h - 2)$, growing asymptotically like the Fibonacci sequence. Thus we get $N(h)$ >= $Fib_{h + 2}$ estimated to be the $\phi^{h}$ where $\phi$ is the golden ratio $(1 + (5)^{1/2}) / 2$. This means to get the height of the balanced tree, we must do the logarithmic calculation to get $h$ = $\log n$ where $n$ is the number of nodes/elements in the bucket.
 
-This now tells us that the find, insert, and remove operations must be bounded on worst time (maximum collision case) of the balanced tree height of $O(\log n)$. By adding the average case bound of $O(1)$ from claim 1, we would still get $O(\log n) + O(1)$ = $O(\log n)$ worst case time complexity for these operations.
+This now tells us that the find, insert, and remove operations must be bounded on worst time (maximum collision case) of the balanced tree height of $O(\log n)$. By adding the average case bound of $O(1)$ from lemma 1, we would still get $O(\log n) + O(1)$ = $O(\log n)$ worst case time complexity for these operations.
 
 #### Remark: These complexities are guaranteed on regular use operations. If the load factor exceeds $0.75$, resizing of the buckets array will cost a $O(n)$ pause for migrating the elements of the current array into the new resized array since we still get $O(\log n)$ on the find, insert, and remove operations. The space complexity of the HashTree data stucture is $O(n)$ where $n$ is the number of elements. More memory pointers are used than the standard hash map with seperate chaining (linked list) collision resolulion strategy.
 
+## Benchmark Testing:
+#### On bench mark testing (using a helper file created by AI), I compared the performance results of my HashTree data structure with the standard baseline unordered_map in c++. I tested and compared the find, insert, and remove operations on a number of iterations ($100000$) and did average case and worst case performance testing. These were the following results: 
+
+```
+=== Benchmark: Normal Case (unique keys) ===
+unordered_map -> insert: 44 ms, search: 4 ms, delete: 17 ms
+HashTree -> insert: 22 ms, search: 1 ms, delete: 4 ms
+
+=== Benchmark: Worst Case (all collide) ===
+unordered_map -> insert: 14 ms, search: 4 ms, delete: 3 ms
+HashTree -> insert: 9 ms, search: 1 ms, delete: 1 ms
+```
 
 
