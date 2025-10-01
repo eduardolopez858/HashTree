@@ -72,4 +72,5 @@ This should be size 1: 1
 #### Script for HashTree methods implementation: https://github.com/eduardolopez858/HashTree/blob/main/HashTree.cpp
 #### Script for main method (simple meteorite implementation): https://github.com/eduardolopez858/HashTree/blob/main/main.cpp
 #### Script for benchmarking: https://github.com/eduardolopez858/HashTree/blob/main/benchmark.cpp
+#### Standard Template Library: https://www.geeksforgeeks.org/cpp/the-c-standard-template-library-stl/
 
