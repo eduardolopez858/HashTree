@@ -23,15 +23,15 @@
 ## Complexity Analysis: 
 #### Claim 1 (Average Case) : Under uniform hashing bounded by a constant load factor $\alpha$, the HashTree data structure has an expected $O(1)$ time complexity on find, insert, and remove operations.
 
-#### $proof:$ Let $\alpha$ be the load factor calculated by $n$/$m$ where $n$ is the number of elements and $m$ is the number of buckets. This is bounded by a given constant $\alpha$ < 0.75 = $O(1)$ necessary for resizing.
-#### 1. By uniform hashing, the expected number of elements in any bucket is $E[k]$ = $\alpha$ = $O(1), where k is the number of elements in the bucket.
-#### 2. Each operation first calculates the hash and index of the bucket in $O(1)$.
-#### 3. Within each bucket, it contains a balanced tree structure of $O(\log k)$ cost for collision handling. Since $E[k]$ = $O(1)$ given from 1, then we get $O(\log E[k])$ = $O(\log O(1))$ = $O(1)$. 
-#### We can now combine 2 and 3 to get an overall expected $O(1)$ time complexity for the find, insert, and remove operations.
+$proof:$ Let $\alpha$ be the load factor calculated by $n$/$m$ where $n$ is the number of elements and $m$ is the number of buckets. This is bounded by a given constant $\alpha$ < 0.75 = $O(1)$ necessary for resizing.
+1. By uniform hashing, the expected number of elements in any bucket is $E[k]$ = $\alpha$ = $O(1), where k is the number of elements in the bucket.
+2. Each operation first calculates the hash and index of the bucket in $O(1)$.
+3. Within each bucket, it contains a balanced tree structure of $O(\log k)$ cost for collision handling. Since $E[k]$ = $O(1)$ given from 1, then we get $O(\log E[k])$ = $O(\log O(1))$ = $O(1)$. 
+We can now combine 2 and 3 to get an overall expected $O(1)$ time complexity for the find, insert, and remove operations.
 
-#### Claim 2 (Worst Case) : The HashTree data structure guarentree a worst case time complexity of $O(\log n)$ for the find, insert, and remove operations.
+#### Claim 2 (Worst Case) : The HashTree data structure guarantees a worst case time complexity of $O(\log n)$ for the find, insert, and remove operations.
 
-#### $proof:$ 
+$proof:$ In the worst case of of maximum collisions, the bucket contains the structure of a balanced tree of height $h$. Suppose $N(h)$ is the minimum number of nodes, then we get the recurrence $N(h)$ = 1 + $N(h - 1)$ + $N(h - 2)$, growing asymptotically like the Fibonacci sequence. Thus we get $N(h)$ >= $Fib_{h + 2}$ 
 
 
 
